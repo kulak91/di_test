@@ -4,7 +4,7 @@ import { Logger as Logger_0 } from "./services/logger.service";
 import { HTTPService as HTTPService_1 } from "./services/http.service";
 import { ParentClass as ParentClass_2 } from "./pile-of-classes";
 import { ChildClass as ChildClass_3 } from "./pile-of-classes";
-import { MyTestClass as MyTestClass_4 } from "./test";
+import MyTestClass_4 from "./test";
 
 export interface ParameterData {
   name: string;
@@ -119,7 +119,7 @@ export const classesReflection: ClassData[] = [
     exportMethod: "named",
   },
   {
-    fqcn: "index/ParentClass",
+    fqcn: "pile-of-classes/ParentClass",
     name: "ParentClass",
     ctor: ParentClass_2,
     implementsInterfaces: ["ParentInterface"],
@@ -135,7 +135,7 @@ export const classesReflection: ClassData[] = [
     exportMethod: "named",
   },
   {
-    fqcn: "index/ChildClass",
+    fqcn: "pile-of-classes/ChildClass",
     name: "ChildClass",
     ctor: ChildClass_3,
     implementsInterfaces: [],
@@ -167,8 +167,103 @@ export const classesReflection: ClassData[] = [
     properties: [],
     methods: [],
     isExported: true,
-    exportMethod: "named",
+    exportMethod: "default",
   },
 ];
 
-export const interfacesReflection: InterfaceData[] = [];
+export const interfacesReflection: InterfaceData[] = [
+  {
+    fqin: "reflectionData/ParameterData",
+    name: "ParameterData",
+    extendsInterface: null,
+    properties: [
+      { name: "name", type: "string", visibility: "public" },
+      { name: "type", type: "string", visibility: "public" },
+    ],
+    methods: [],
+    isExported: true,
+    exportMethod: "named",
+  },
+  {
+    fqin: "reflectionData/PropertyData",
+    name: "PropertyData",
+    extendsInterface: null,
+    properties: [
+      { name: "name", type: "string", visibility: "public" },
+      { name: "type", type: "string", visibility: "public" },
+      {
+        name: "visibility",
+        type: '"public"|"protected"|"private"',
+        visibility: "public",
+      },
+    ],
+    methods: [],
+    isExported: true,
+    exportMethod: "named",
+  },
+  {
+    fqin: "reflectionData/MethodData",
+    name: "MethodData",
+    extendsInterface: null,
+    properties: [
+      { name: "name", type: "string", visibility: "public" },
+      { name: "parameters", type: "ParameterData[]", visibility: "public" },
+      { name: "returnType", type: "string", visibility: "public" },
+      {
+        name: "visibility",
+        type: '"public"|"protected"|"private"',
+        visibility: "public",
+      },
+    ],
+    methods: [],
+    isExported: true,
+    exportMethod: "named",
+  },
+  {
+    fqin: "reflectionData/ClassData",
+    name: "ClassData",
+    extendsInterface: null,
+    properties: [
+      { name: "fqcn", type: "string", visibility: "public" },
+      { name: "name", type: "string", visibility: "public" },
+      { name: "ctor", type: "Constructor|null", visibility: "public" },
+      { name: "implementsInterfaces", type: "string[]", visibility: "public" },
+      { name: "extendsClass", type: "string|null", visibility: "public" },
+      {
+        name: "constructorParameters",
+        type: "ParameterData[]",
+        visibility: "public",
+      },
+      {
+        name: "constructorVisibility",
+        type: '"public"|"protected"|"private"',
+        visibility: "public",
+      },
+      { name: "isAbstract", type: "boolean", visibility: "public" },
+      { name: "properties", type: "PropertyData[]", visibility: "public" },
+      { name: "methods", type: "MethodData[]", visibility: "public" },
+      { name: "isExported", type: "boolean", visibility: "public" },
+      { name: "exportMethod", type: '"named"|"default"', visibility: "public" },
+    ],
+    methods: [],
+    isExported: true,
+    exportMethod: "named",
+  },
+  {
+    fqin: "reflectionData/InterfaceData",
+    name: "InterfaceData",
+    extendsInterface: null,
+    properties: [
+      { name: "fqin", type: "string", visibility: "public" },
+      { name: "name", type: "string", visibility: "public" },
+      { name: "properties", type: "PropertyData[]", visibility: "public" },
+      { name: "extendsInterface", type: "string|null", visibility: "public" },
+      { name: "methods", type: "MethodData[]", visibility: "public" },
+      { name: "isExported", type: "boolean", visibility: "public" },
+      { name: "exportMethod", type: '"named"|"default"', visibility: "public" },
+    ],
+    methods: [],
+    isExported: true,
+    exportMethod: "named",
+  },
+];

@@ -2,7 +2,7 @@ import { ChildClass } from "./pile-of-classes";
 import { inject } from "./services";
 
 
-export class MyTestClass {
+class MyTestClass {
   testMethod() {
     const test = inject(ChildClass);
 
@@ -10,3 +10,5 @@ export class MyTestClass {
 
   }
 }
+
+export default MyTestClass;

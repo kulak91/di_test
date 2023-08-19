@@ -5,7 +5,7 @@ interface ParentInterface {
   parentMethod: () => void;
 }
 
-export class ParentClass implements ParentInterface {
+class ParentClass implements ParentInterface {
   httpService: HTTPService;
   constructor() {
     this.httpService = inject(HTTPService);
@@ -15,7 +15,7 @@ export class ParentClass implements ParentInterface {
   }
 }
 
-export class ChildClass extends ParentClass {
+class ChildClass extends ParentClass {
   logger = inject(Logger);
 
   childMethod() {
@@ -35,3 +35,5 @@ export class ChildClass extends ParentClass {
       }
   }
 }
+
+export { ChildClass, ParentClass };
