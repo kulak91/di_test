@@ -1,4 +1,4 @@
-import { ChildClass } from ".";
+import { ChildClass } from "./pile-of-classes";
 import { inject } from "./services";
 
 

@@ -2,8 +2,8 @@
 /* eslint-disable no-restricted-imports */
 import { Logger as Logger_0 } from "./services/logger.service";
 import { HTTPService as HTTPService_1 } from "./services/http.service";
-import { ParentClass as ParentClass_2 } from "./index";
-import { ChildClass as ChildClass_3 } from "./index";
+import { ParentClass as ParentClass_2 } from "./pile-of-classes";
+import { ChildClass as ChildClass_3 } from "./pile-of-classes";
 import { MyTestClass as MyTestClass_4 } from "./test";
 
 export interface ParameterData {
