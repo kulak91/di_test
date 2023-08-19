@@ -1,4 +1,4 @@
-import { HTTPService, inject, Logger } from "./services";
+import { HTTPService, inject, Logger } from './services';
 
 interface ParentInterface {
   httpService: HTTPService;
@@ -24,15 +24,16 @@ class ChildClass extends ParentClass {
 
   async spyOn(dude: string = 'what1slove'): Promise<void> {
     const requestURL = `https://api.github.com/users/${dude}/repos`;
-      const repos = await this.httpService.send<Array<{ name?: string}>>(requestURL);
-      if (!repos) {
-        return this.logger.info('Ah.. man');
-      }
-      this.logger.info(dude, 'has', repos.length, 'repos:')
-      for (const repo of repos) {
-        this.logger.info(repo.name || 'unknown repo');
-
-      }
+    const repos = await this.httpService.send<Array<{ name?: string }>>(
+      requestURL,
+    );
+    if (!repos) {
+      return this.logger.info('Ah.. man');
+    }
+    this.logger.info(dude, 'has', repos.length, 'repos:');
+    for (const repo of repos) {
+      this.logger.info(repo.name || 'unknown repo');
+    }
   }
 }
 

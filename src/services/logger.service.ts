@@ -1,5 +1,4 @@
 class Logger {
-
   info(...data: unknown[]): void {
     console.log(...data);
   }
